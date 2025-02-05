@@ -1,4 +1,3 @@
-import { getUserElements } from "@/app/user.action";
 import { auth } from "../../config/auth";
 import { actionClient, ActionError } from "./safe-actions";
 
@@ -20,12 +19,12 @@ export const authActionClient = actionClient.use(async ({ next, metadata }) => {
   return next({ ctx: { user: session.user } });
 });
 
-export const authActionAdmin = actionClient.use(async ({ next }) => {
-  const sessionInfo = await getUserElements({
-    userEmail: "rayanedu92290@gmail.com",
-  });
+// export const authActionAdmin = actionClient.use(async ({ next }) => {
+//   const sessionInfo = await getUserElements({
+//     userEmail: "rayanedu92290@gmail.com",
+//   });
 
-  console.log(sessionInfo);
+//   console.log(sessionInfo);
 
-  return next({ ctx: { user: session.user } });
-});
+//   return next({ ctx: { user: session.user } });
+// });
